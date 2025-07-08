@@ -2,17 +2,18 @@ version: 0.2
 
 phases:
   install:
+    runtime-versions:
+      nodejs: 18
     commands:
-      - echo Installing dependencies...
+      - echo "Installing dependencies..."
       - npm install
   build:
     commands:
-      - echo Building...
+      - echo "Building TypeScript..."
       - npm run build
   post_build:
     commands:
-      - echo Build complete
-
-artifacts:
-  files:
-    - '**/*'
+      - echo "Deploying to EC2..."
+      - chmod 400 ec2-key.pem
+      - scp -i ec2-key.pem -o StrictHostKeyChecking=no -r * ec2-user@<EC2-PUBLIC-IP>:/home/ec2-user/ts-eb-app
+      - ssh -i ec2-key.pem -o StrictHostKeyChecking=no ec2-user@<EC2-PUBLIC-IP> "cd /home/ec2-user/ts-eb-app && bash install_dependencies.sh && bash start_server.sh"
