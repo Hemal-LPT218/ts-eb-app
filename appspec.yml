@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/ts-node-ec2-app
+
+hooks:
+  AfterInstall:
+    - location: install_dependencies.sh
+      timeout: 300
+      runas: ubuntu
+
+  ApplicationStart:
+    - location: start_server.sh
+      timeout: 300
+      runas: ubuntu
