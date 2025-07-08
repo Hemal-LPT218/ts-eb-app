@@ -19,4 +19,5 @@ artifacts:
     - dist/**/*
     - scripts/**/*
     - package.json
+    - appspec.yml
     - ecosystem.config.js  # if using pm2
