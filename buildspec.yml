@@ -11,3 +11,11 @@ phases:
     commands:
       - echo "Building TypeScript project"
       - npm run build
+  post_build:
+    commands:
+      - echo "Build completed"
+artifacts:
+  files:
+    - dist/**/*
+    - package.json
+    - ecosystem.config.js  # if using pm2
