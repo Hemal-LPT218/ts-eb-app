@@ -1,11 +1,13 @@
+// src/index.ts
 import express from "express";
-const app = express();
-const PORT = parseInt(process.env.PORT || "3000", 10);
 
-app.get("/", (req, res) => {
-  res.send("<h1>Hello Hemal Parmar from Elastic Beanstalk!</h1>");
+const app = express();
+const port = process.env.PORT || 3000;
+
+app.get("/", (_req, res) => {
+  res.send("Hello from Node.js + TypeScript + EC2!");
 });
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(port, () => {
+  console.log(`Server running on http://localhost:${port}`);
 });

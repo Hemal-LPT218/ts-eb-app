@@ -3,13 +3,21 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "ts-node-dev --respawn src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
     "build": "tsc",
     "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hemal-LPT218/ts-eb-app.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Hemal-LPT218/ts-eb-app/issues"
+  },
+  "homepage": "https://github.com/Hemal-LPT218/ts-eb-app#readme",
   "description": "",
   "dependencies": {
     "express": "^5.1.0"
