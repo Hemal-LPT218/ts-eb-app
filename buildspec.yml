@@ -17,5 +17,6 @@ phases:
 artifacts:
   files:
     - dist/**/*
+    - scripts/**/*
     - package.json
     - ecosystem.config.js  # if using pm2
