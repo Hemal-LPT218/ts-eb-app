@@ -1,0 +1,28 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      nodejs: 18 # or 20, depending on your setup
+    commands:
+      - echo Installing dependencies...
+      - npm install
+
+  pre_build:
+    commands:
+      - echo Running pre-build checks...
+
+  build:
+    commands:
+      - echo Building the project...
+      - npm run build
+      
+  post_build:
+    commands:
+      - echo Build completed successfully.
+      - echo Output files in dist/ directory.
+
+artifacts:
+  files:
+    - '**/*'
+  discard-paths: no
