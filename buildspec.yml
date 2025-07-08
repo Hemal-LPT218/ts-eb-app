@@ -15,5 +15,5 @@ phases:
     commands:
       - echo "Deploying to EC2..."
       - chmod 400 ec2-key.pem
-      - scp -i ec2-key.pem -o StrictHostKeyChecking=no -r * ec2-user@<EC2-PUBLIC-IP>:/home/ec2-user/ts-eb-app
-      - ssh -i ec2-key.pem -o StrictHostKeyChecking=no ec2-user@<EC2-PUBLIC-IP> "cd /home/ec2-user/ts-eb-app && bash install_dependencies.sh && bash start_server.sh"
+      - scp -i ec2-key.pem -o StrictHostKeyChecking=no -r * ec2-user@3.111.40.208:/home/ec2-user/ts-eb-app
+      - ssh -i ec2-key.pem -o StrictHostKeyChecking=no ec2-user@3.111.40.208 "cd /home/ec2-user/ts-eb-app && bash install_dependencies.sh && bash start_server.sh"
