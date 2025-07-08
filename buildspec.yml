@@ -11,13 +11,3 @@ phases:
     commands:
       - echo "Building TypeScript project"
       - npm run build
-  post_build:
-    commands:
-      - echo "Triggering deploy on EC2 using SSM"
-      - aws ssm send-command \
-          --document-name "AWS-RunShellScript" \
-          --comment "Deploy TypeScript App" \
-          --targets "Key=tag:Name,Values=Demo-instance-for-pipeline" \
-          --parameters 'commands=["cd /home/ec2-user/ts-eb-app", "git pull origin main", "npm install", "npm run build", "pkill node || true", "nohup npm run start &"]' \
-          --timeout-seconds 600 \
-          --region ap-south-1
