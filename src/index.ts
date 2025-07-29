@@ -3,7 +3,7 @@ import express from "express";
 const app = express();
 
 app.get("/", (_req, res) => {
-  res.send("Hello from TypeScript + Node on EC2! With ASG and CodeDeploy");
+  res.send("Hello from TypeScript + Node on Docker container!");
 });
 
 app.get("/health", (req, res) => {
