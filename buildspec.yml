@@ -6,18 +6,20 @@ phases:
       nodejs: 18
     commands:
       - echo "Installing dependencies"
-      - npm install
   build:
     commands:
       - echo "Building TypeScript project"
-      - npm run build
+      - docker build -t demo-repository/docker-node-app .
   post_build:
     commands:
       - echo "Build completed"
-artifacts:
-  files:
-    - dist/**/*
-    - scripts/**/*
-    - package.json
-    - appspec.yml
-    - ecosystem.config.js  # if using pm2
+      - docker tag demo-repository/docker-node-app:latest 730335183789.dkr.ecr.ap-south-1.amazonaws.com/demo-repository/docker-node-app:latest
+      - docker push 730335183789.dkr.ecr.ap-south-1.amazonaws.com/demo-repository/docker-node-app:latest
+      - echo "Push completed"
+# artifacts:
+#   files:
+#     - dist/**/*
+#     - scripts/**/*
+#     - package.json
+#     - appspec.yml
+#     - ecosystem.config.js  # if using pm2
