@@ -3,7 +3,7 @@ import express from "express";
 const app = express();
 
 app.get("/", (_req, res) => {
-  res.send("Hello from TypeScript + Node on Docker container!");
+  res.send("Hello from TypeScript + Node on Docker container! Version 2");
 });
 
 app.get("/health", (req, res) => {
