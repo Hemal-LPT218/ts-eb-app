@@ -20,7 +20,7 @@ phases:
       - docker tag demo-repository/docker-node-app:latest 730335183789.dkr.ecr.ap-south-1.amazonaws.com/demo-repository/docker-node-app:latest
       - docker push 730335183789.dkr.ecr.ap-south-1.amazonaws.com/demo-repository/docker-node-app:latest
       - echo "Push completed"
-      - printf '[{"name":"Demo-Cluster-For-Pipeline","imageUri":"%s"}]' 730335183789.dkr.ecr.ap-south-1.amazonaws.com/demo-repository/docker-node-app:latest > imagedefinitions.json
+      - printf '[{"name":"Node-App","imageUri":"%s"}]' 730335183789.dkr.ecr.ap-south-1.amazonaws.com/demo-repository/docker-node-app:latest > imagedefinitions.json
 artifacts:
   files: imagedefinitions.json
 #     - dist/**/*
