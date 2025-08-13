@@ -17,8 +17,10 @@ phases:
   post_build:
     commands:
       - echo "Build completed"
-      - docker tag demo-repository/docker-node-app:latest 730335183789.dkr.ecr.us-east-1.amazonaws.com/demo-repository/docker-node-app:latest
-      - docker push 730335183789.dkr.ecr.us-east-1.amazonaws.com/demo-repository/docker-node-app:latest
+      # - docker tag demo-repository/docker-node-app:latest 730335183789.dkr.ecr.us-east-1.amazonaws.com/demo-repository/docker-node-app:latest
+      # - docker push 730335183789.dkr.ecr.us-east-1.amazonaws.com/demo-repository/docker-node-app:latest
+      - printf '[{"name":"AppCluster","imageUri":"730335183789.dkr.ecr.us-east-1.amazonaws.com/demo-repository/docker-node-app:latest"}]' > imagedefinitions.json
       - echo "Push completed"
 artifacts:
-  files: "**/*"
+  # files: "**/*"
+  files: "imagedefinitions.json"
