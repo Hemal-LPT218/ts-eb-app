@@ -23,4 +23,6 @@ phases:
       - echo "Push completed"
 artifacts:
   # files: "**/*"
-  files: "imagedefinitions.json"
+  files:
+    - "imagedefinitions.json"
+    - "appspec.yml"
