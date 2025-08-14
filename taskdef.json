@@ -5,7 +5,7 @@
   "containerDefinitions": [
     {
       "name": "app",
-      "image": "<IMAGE1_NAME>",
+      "image": "730335183789.dkr.ecr.us-east-1.amazonaws.com/demo-repository/docker-node-app:latest",
       "essential": true,
       "portMappings": [
         {
