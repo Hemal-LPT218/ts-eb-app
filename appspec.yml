@@ -19,7 +19,7 @@ Resources:
   - TargetService:
       Type: AWS::ECS::Service
       Properties:
-        TaskDefinition: AppTask
+        TaskDefinition: arn:aws:ecs:us-east-1:730335183789:task-definition/AppTask:6
         LoadBalancerInfo:
           ContainerName: app
           ContainerPort: 3000
